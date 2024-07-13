@@ -70,3 +70,8 @@
     background: red;
     columns: white;
 }
+@media(max-width:1280px){
+    .navbar{
+        padding: 12px 50px;
+    }
+}
