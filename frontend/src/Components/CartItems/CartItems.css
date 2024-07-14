@@ -6,7 +6,7 @@
     background: #e2e2e2;
     border: 0;
 }
-.cartitems-forms-main{
+.cartitems-format-main{
     display: grid;
     grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr;
     align-items: center;
@@ -73,7 +73,7 @@
     width: 504;
     margin-top: 15px;
     padding-left: 20px;
-    height: 50px;
+    height: 58px;
     background: #eaeaea;
 }
 .cartitems-promobox input{
@@ -91,6 +91,8 @@
     background: black;
     color: white;
     cursor: pointer;
+    margin-left: 105px;
+    margin-top: 3px;
 }
 @media(max-width:1280px){
     .cartitems{
@@ -135,8 +137,10 @@
     .cartitems-promobox button{
         width: 120px;
         margin-left: -125;
+        margin-top: 20px;
     }
 }
+
 @media(max-width:500px){
     .cartitems-format-main{
         display:none;

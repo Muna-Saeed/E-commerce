@@ -53,7 +53,6 @@ const ProductDisplay = (props) => {
             <p className="productdisplay-right-category"><span>Tags: </span>Modern, Latest</p>
 
         </div>
-        img
         
     </div>
   )

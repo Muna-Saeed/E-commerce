@@ -8,9 +8,9 @@ import ShopCategory from './Pages/ShopCategory'; // Import ShopCategory componen
 import Product from './Pages/Product'; // Import Product component
 import Cart from './Pages/Cart'; // Import Cart component
 import Footer from './Components/Footer/Footer';
-import men_banner from './Components/Assets/banner_mens.png'
-import women_banner from './Components/Assets/banner_women.png'
-import kid_banner from './Components/Assets/banner_kids.png'
+import men_banner from './Components/Assets/banner_mens.png';
+import women_banner from './Components/Assets/banner_women.png';
+import kid_banner from './Components/Assets/banner_kids.png';
 
 function App() {
   return (
