@@ -46,8 +46,9 @@ const AddProduct = () => {
                 Accept: 'application/json',
                 'Content-Type': 'application/json'
             },
+            body: JSON.stringify(product),
             }).then((resp) => resp.json()).then((data)=>{
-                data.success?alert("Product Added"):alert(Failed)
+                data.success?alert("Product Added"):alert("Failed")
             })
         }
 
@@ -66,7 +67,7 @@ const AddProduct = () => {
             </div>
             <div className="addproduct-itemfield">
                 <p>Offer Price</p>
-                <input value={productDetails.new_price} type="text" name='new_price' placeholder='Enter here' />
+                <input value={productDetails.new_price}  onChange={changeHandler} type="text" name='new_price' placeholder='Enter here' />
             </div>
         </div>
         <div className="addproduct-itemfield">
@@ -79,11 +80,11 @@ const AddProduct = () => {
         </div>
         <div className="addproduct-itemfield">
             <label htmlFor="file-input">
-                <img src={imgage?URL.createObjectURL(Image):upload_area} className='addproduct-thumnail' alt="" />
+                <img src={image?URL.createObjectURL(image):upload_area} className='addproduct-thumnail' alt="" />
             </label>
             <input onChange={imageHandler} type="file" name='image' id='file-input' hidden />
         </div>
-        <button onClick={()=>{Add_product}} className='addproduct-btn'>Add product</button>
+        <button onClick={()=>{Add_product()}} className='addproduct-btn'>Add product</button>
     </div>
   )
 }

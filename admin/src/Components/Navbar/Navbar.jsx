@@ -8,7 +8,6 @@ const Navbar = () => {
     <div className='navbar'>
         <img src={nav_logo} alt="" className="nav-logo" />
         <img src={nav_profile_icon} alt="By Alexandru Stoica" className="nav-profile" />
-
     </div>
   )
 }
