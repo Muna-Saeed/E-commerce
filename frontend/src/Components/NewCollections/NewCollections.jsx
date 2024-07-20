@@ -11,6 +11,7 @@ const NewCollections = () => {
     .then((response)=>response.json())
     .then((data)=>setNew_collection(data));
   },[])
+  
   return (
     <div className='new-collections'>
         <h1>NEW COLLECTIONS</h1>
