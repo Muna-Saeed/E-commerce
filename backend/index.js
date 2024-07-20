@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
+const jwt = require('jsonwebtoken');
 
 app.use(express.json());
 app.use(cors());
@@ -127,6 +128,94 @@ app.get('/getallproducts',async (req,res)=>{
     console.log("All products Fetched");
     res.send(products);
 })
+
+//Creating user shcema for user model
+
+const Users = mongoose.model('Users',{
+    name:{
+        type:String,
+    },
+    email:{
+        type:String,
+        unique:true,
+    },
+    password:{
+        type:String,
+    },
+    cartData:{
+        type:Object,
+    },
+    date:{
+        type:Date,
+        default:Date.now,
+
+    }
+})
+
+//Creating Endpoint for Regestering user
+app.post('/signup', async(req,res)=>{
+    let check = await Users.findOne({email:req.body.email})
+    if (check) {
+        return res.status(400).json({success:false,errors:"The User already exist"})
+    }
+    let cart = {};
+    for (let i = 0; i < 300; i++) {
+        cart[i]=0;        
+    }
+    const user = new Users({
+        name:req.body.username,
+        email:req.body.email,
+        passsword:req.body.password,
+        cartData:cart
+    })
+    await user.save();
+
+    const data = {
+        user:{
+            id:user.id
+        }
+    }
+
+    const token = jwt.sign(data, 'secret_ecom');
+    res.json({success:true,token})
+
+})
+
+// creating endpoint for user login
+app.post('/login', async (req, res) => {
+    try {
+        console.log("Login request received");
+        let user = await Users.findOne({ email: req.body.email });
+
+        if (user) {
+            console.log("User found:", user.email);
+            console.log("Request password:", req.body.password);
+            console.log("Stored password:", user.password);
+
+            const passwordCompare = req.body.password === user.password;
+
+            if (passwordCompare) {
+                console.log("Password match");
+                const data = {
+                    user: {
+                        id: user.id
+                    }
+                };
+                const token = jwt.sign(data, 'secret_ecom');
+                return res.json({ success: true, token });
+            } else {
+                console.log("Incorrect password");
+                return res.status(400).json({ success: false, errors: "Incorrect password" });
+            }
+        } else {
+            console.log("User not found");
+            return res.status(400).json({ success: false, errors: "Incorrect Email ID" });
+        }
+    } catch (error) {
+        console.error("Error in /login:", error);
+        res.status(500).send("Internal Server Error");
+    }
+});
 
 
 app.listen(port, (error) => {
