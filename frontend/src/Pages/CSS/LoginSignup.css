@@ -11,6 +11,7 @@
     background: white;
     margin: auto;
     padding: 40px 60px;
+    margin-top: -20px;
 }
 .loginsignup-container h1{
     margin: 20px 0px;
@@ -34,7 +35,7 @@
     width: 530px;
     height: 72px;
     color: white;
-    background: #ff4141;
+    background: #213F99;
     margin-top: 30px;
     border: none;
     font-size: 24px;
@@ -48,7 +49,7 @@
     font-weight: 500;
 }
 .loginsignup-login span{
-    color: #ff4141;
+    color: #213F99;
     font-weight: 600;
 }
 .loginsignup-agree{

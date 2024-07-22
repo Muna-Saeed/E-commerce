@@ -241,7 +241,7 @@ const fetchUser = async(req,res,next) => {
     }
     else{
         try{
-            const data = jwt.verify(token, 'secret-ecom');
+            const data = jwt.verify(token, 'secret_ecom');
             req.user =data.user;
             next();
         }catch (error){
@@ -272,7 +272,7 @@ app.post('/removefromcart', fetchUser, async(req,res)=>{
 
 //creating endpoint to retrieve cartData
 app.post('/getcart', fetchUser, async(req,res)=>{
-    console.log("RemoGetCart");
+    console.log("GetCart");
     let userData = await Users.findOne({_id:req.user.id});
     res.json(userData.cartData);
 })
