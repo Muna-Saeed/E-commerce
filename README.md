@@ -2,7 +2,7 @@ This `README.md` file for my e-commerce repository. This includes sections on pr
 
 # E-commerce Website
 
-This is a full-fledged e-commerce website built with React for the frontend and Node.js with Express for the backend. MongoDB is used as the database to store product and user information.
+This is a simple E-commerce website built with React for the frontend and Node.js with Express for the backend. MongoDB is used as the database to store product and user information.
 
 ## Features
 
@@ -10,8 +10,8 @@ This is a full-fledged e-commerce website built with React for the frontend and 
 - Product Listings
 - Shopping Cart
 - Order History
-- Image Upload for Products
 - Admin Panel for Product Management
+- Image Upload for Products
 
 ## Technologies Used
 
@@ -21,6 +21,7 @@ This is a full-fledged e-commerce website built with React for the frontend and 
 - Authentication: JWT (JSON Web Tokens)
 - File Upload: Multer
 - State Management: React Context API
+- Admin Panel: Vite
 
 ## Setup Instructions
 
@@ -32,8 +33,8 @@ This is a full-fledged e-commerce website built with React for the frontend and 
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/e-commerce-website.git
-cd e-commerce-website
+git clone https://github.com/Muna-Saeed/E-commerce.git
+cd E-commerce
 ```
 
 ### Frontend Setup
