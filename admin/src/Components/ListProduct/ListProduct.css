@@ -8,6 +8,7 @@
     margin: 30px;
     border-radius: 6px;
     background: #85acdf;
+    color: white;
 }
 .listproduct-format-main{
     display: grid;
@@ -15,7 +16,7 @@
     gap: 10px;
     width: 100%;
     padding: 20px 0px;
-    color: #454545;
+    color: white;
     font-size: 15px;
     font-weight: 600;
 }
